@@ -4,6 +4,9 @@ FROM node:9.10
 # Working directory inside the container
 WORKDIR /app
 
+# set environment variables
+ENV PORT=8181
+
 # Download project dependencies and copy project files over to
 # the container
 COPY package.json /app
@@ -15,4 +18,4 @@ COPY . /app
 CMD node app.js
 
 # Open port 5000 on the container, so that it can be accessed via a proxy
-EXPOSE 5000
+EXPOSE $PORT
