@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+
+  app:
+
+    build: ./
+    ports:
+      - "3000:8181"
+    links:
+      - database
+    volumes:
+      - .:/app
+
+    ## This makes sure that database runs BEFORE myapp so that we have a
+    # connection open when the app is started
+    depends_on:
+      - database
+
+  database:
+
+    image: mongo
+
+
