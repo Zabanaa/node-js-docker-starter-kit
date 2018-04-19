@@ -10,11 +10,17 @@ mongoose.Promise = global.Promise
 
 const db = mongoose.connection
 
-
+// middleware
 app.use(bodyParser.json())
 
+// template engine
+app.set("view engine", "pug")
+
 app.get("/", (req, res) => {
-    res.send("Hello New World")
+    res.render("index", {
+        title: "Hello Express.js",
+        message:"Hello from template"
+    })
 })
 
 app.get("/ninjas", (req, res) => {
