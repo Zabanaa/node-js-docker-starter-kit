@@ -4,15 +4,20 @@ services:
 
   app:
 
-    build: ./
+    image: node:9.10
+    working_dir: /app
+    container_name: zabana_api
+    volumes:
+      - .:/app
+    environment:
+      PORT: "8181"
+    expose:
+      - "8181"
     ports:
       - "3000:8181"
     links:
       - database
-    volumes:
-      - .:/app
-
-    command: nodemon app.js
+    command: bash -c "npm install -g nodemon && nodemon app.js"
 
     ## This makes sure that database runs BEFORE myapp so that we have a
     # connection open when the server is started
@@ -20,6 +25,7 @@ services:
       - database
 
   database:
+    container_name: zabana_api_db
     image: mongo
     # Adds data persistence across builds / restarts
     volumes:
