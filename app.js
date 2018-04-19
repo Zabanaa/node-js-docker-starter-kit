@@ -5,7 +5,7 @@ const bodyParser = require("body-parser")
 const Ninja = require("./schema")
 const PORT = process.env.PORT || 5000
 
-mongoose.connect("mongodb://localhost:27017/mytestdb")
+mongoose.connect("mongodb://database:27017/mytestdb")
 mongoose.Promise = global.Promise
 
 const db = mongoose.connection

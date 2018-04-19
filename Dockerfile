@@ -4,16 +4,17 @@ FROM node:9.10
 # Working directory inside the container
 WORKDIR /app
 
-# set environment variables
-ENV PORT=8181
+RUN npm install -g nodemon
 
+# set environment variables
+# ENV PORT=8181
 # Download project dependencies and copy project files over to
 # the container
-COPY package.json /app
+# COPY package.json /app
 
-RUN npm install
+# RUN npm install
 
-COPY . /app
+# COPY . /app
 
 CMD node app.js
 

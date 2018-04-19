@@ -12,13 +12,15 @@ services:
     volumes:
       - .:/app
 
+    command: nodemon app.js
+
     ## This makes sure that database runs BEFORE myapp so that we have a
-    # connection open when the app is started
+    # connection open when the server is started
     depends_on:
       - database
 
   database:
-
     image: mongo
-
-
+    # Adds data persistence across builds / restarts
+    volumes:
+      - ./data/db:/data/db
