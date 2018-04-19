@@ -1,3 +1,3 @@
-## Express.js MongoDB Docker Starter Kit
+## Express.js / MongoDB / Docker Starter Kit
 
 
