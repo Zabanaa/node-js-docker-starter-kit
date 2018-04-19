@@ -17,6 +17,16 @@ app.get("/", (req, res) => {
     res.send("Hello New World")
 })
 
+app.get("/ninjas", (req, res) => {
+    Ninja.find({})
+        .then( ninjas => res.send(ninjas))
+})
+
+app.get("/ninjas/:id", (req, res) => {
+    Ninja.findOne({_id: req.params.id})
+        .then( ninja => res.send(ninja))
+})
+
 app.post("/ninjas", (req, res) => {
     Ninja.create(req.body)
         .then( ninja => res.send(ninja) )
