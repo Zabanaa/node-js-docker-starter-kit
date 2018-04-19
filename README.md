@@ -4,7 +4,7 @@
 
 - Add installation instructions
 - Explain directory structure
--
+- Add support for nginx
 
 
 
