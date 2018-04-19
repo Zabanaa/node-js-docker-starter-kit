@@ -1,14 +1,12 @@
 const express = require("express")
 const app = express()
-const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const Ninja = require("./schema")
-const PORT = process.env.PORT || 5000
+const db = require("./config/database")
+const PORT = process.env.PORT
 
-mongoose.connect("mongodb://database:27017/mytestdb")
-mongoose.Promise = global.Promise
-
-const db = mongoose.connection
+// add this to router files
+// mongoose.Promise = global.Promise
 
 // middleware
 app.use(bodyParser.json())
