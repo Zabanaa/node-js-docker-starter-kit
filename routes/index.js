@@ -1,3 +1,5 @@
-const ninjasEndpoints = require("./ninjas")
+// import your routers like so
+// const projectsEndpoints = require("./projects") // refers to /routes/projects
+// const userEndpoints = require("./users") // refers to /routes/users
 
-module.exports = { ninjasEndpoints }
+// module.exports = { projectsEndpoints, userEndpoints }

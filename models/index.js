@@ -1,3 +1,6 @@
-const Ninja = require("./Ninja")
+// import your models like so
 
-module.exports = { Ninja }
+// const MyModel = require("./MyModel")
+// const MyOtherModel = require("./MyOtherModel")
+
+// module.exports = { MyModel, MyOtherModel }

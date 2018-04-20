@@ -15,7 +15,7 @@ services:
       - "3000:${PORT}"
     links:
       - database
-    command: bash -c "npm install -g nodemon && nodemon app.js"
+    command: bash -c "npm install && npm install -g nodemon && nodemon app.js"
 
     ## This makes sure that database runs BEFORE myapp so that we have a
     # connection open when the server is started
