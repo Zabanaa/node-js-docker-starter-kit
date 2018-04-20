@@ -23,12 +23,15 @@ router.post("/", (req, res) => {
 // PUT /api/ninjas/:id
 router.put("/:id", (req, res) => {
     // update object
+    Ninja.findByIdAndUpdate({_id: req.params.id}, req.body)
+        .then( () => Ninja.findOne({_id: req.params.id}) )
+        .then( updatedNinja => res.send(updatedNinja) )
 })
 
 // DELETE /api/ninjas/:id
 router.delete("/:id", (req, res) => {
-    // delete one
+    Ninja.findByIdAndRemove( {_id: req.params.id})
+        .then( () => res.send({ message: "Successfully removed ninja"}) )
 })
 
 module.exports = router
-
