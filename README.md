@@ -13,21 +13,26 @@ _Note: if you decide to clone this repo, make sure to change the remote url so
 that it points to your own repository. Otherwise you won't be able to push your
 modifications_
 
-2. Create a `.env` file with the following variables
+2. Open the `env.sample` file and populate it with the following variables
 
 ```bash
 PORT=PORT
-MONGO_DB_URI="mongodb://database:27017/yourtestdb"
-NODE_ENV="development|production"
+MONGO_DB_URI=mongodb://database:27017/yourtestdb
+NODE_ENV=development # or production
 ```
 
-3. Start the containers
+3. Rename `env.sample` to `.env`
+
+_Note: don't use quotes around your variables. It will result in errors when
+running the containers_
+
+4. Start the containers
 ```bash
 # first navigate to the directory where your project is located, then run:
 docker-compose up --build
 ```
 
-4. Now visit localhost:3000 and you should be good to go !
+5. Now visit localhost:3000 and you should be good to go !
 
 ## Directory Structure
 
