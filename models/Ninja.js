@@ -12,10 +12,8 @@ const NinjaSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
-
 })
 
 const Ninja = mongoose.model("ninja", NinjaSchema)
 
 module.exports = Ninja
-
